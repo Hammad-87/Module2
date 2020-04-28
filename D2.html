@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!--
+ASSIGNMENT RULES
+- The solution must be pushed to the repository and be available for the tutors by the end of the day
+- You can ask for tutor's help
+- You can google / use StackOverflow BUT we suggest you to use just the material provided
+- To test the page, just open it with your default browser.
+- Use Bootstrap4 classes to render the page.
+- Use correctly containers and rows in order to have a great display
+
+ASSIGNMENT TOPIC
+You are creating a website to showcase your favourite music albums.
+In this page you'd like to have a short bio of yourself, the top albums of your life, 
+the worst album you ever listen to and everything related to the music you love.
+
+NOTE:
+Most of the time, even the most expert of designers, need inspiration.
+Spend 30 minutes surfing the web and searching for the way of rapresenting album that you like the most.
+Could be the Amazon way, the Spotity or Apple music way or some other blog out there.
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- IMPORT ALL THE BOOSTRAP RELATED CSS & SCRIPTS-->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <style>
+        @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+        
+.starrating > input {display: none;}  /* Remove radio buttons */
+
+.starrating > label:before { 
+  content: "\f005"; /* Star */
+  margin: 2px;
+  font-size: 2em;
+  font-family: FontAwesome;
+  display: inline-block; 
+}
+
+.starrating > label
+{
+  color: #222222; /* Start color when not clicked */
+}
+
+.starrating > input:checked ~ label
+{ color: #ffca08 ; } /* Set yellow color when star checked */
+
+.starrating > input:hover ~ label
+{ color: #ffca08 ;  } /* Set yellow color when star hover */
+
+#footer {
+        background-color: burlywood;
+        position: relative;
+        height: 50px;
+        margin-top:-23px;
+        clear: both;        
+      }
+#name{
+          font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          font-weight: lighter;
+    }       
+
+      /* EXERCISE 1
+            For all Albums we'd like to have a consistent style.
+            Create a class for:
+            - The album container
+            - The album cover
+            - The album title
+            - The album group / singer / dj
+            - The album genre
+            - The album duration
+            - etc
+         */
+
+      /* EXERCISE 2 
+            Based on the artists you like the most, create a combination of colors 
+            to override bootstrap standard and make your website unique
+         */
+    </style>
+  </head>
+  <body>
+    <!-- EXERCISE 3 
+            Implement a navigation bar using the bootstrap component
+            This navigation bar must be linked to every section in your page
+        -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+
+    <!-- EXERCISE 4
+            Create a Responsive section for your favourite albums.
+            In this section you should have:
+            - 4 albums per row when the screen is very large
+            - 3 albums per row when you are on a tablet (or a smaller window)
+            - 2 albums per row when you are on a small screen
+        -->
+        <div class="container mb-4">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3"> 
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="Hillsong.jpg" alt="Card image cap" >
+                        <div class="card-body">
+                            <p class="card-text">Best Hillsong Songs Full Album 2020 - Top Latest Hillsong Worship Songs Medley.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3"> 
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="preorder.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Justin Bieber is officially making a return to music, announcing his new album, 'Changes', a docu-series, and a US tour.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3"> 
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="feeeling.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">UGANDAN SUPERSTAR, BEBE COOL COMES THROUGH WITH AN IMPRESSIVE RECORD TAGGED “FEELING.”</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3"> 
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="falloff.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">The Dreamville rapper is set to make a big return the follow-up to 2018's 'KOD'.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXERCISE 5
+            Create a section for the album review.
+            Pick one of your fav albums, and create a section with:
+            - Cover
+            - Title
+            - Band
+            - Lenght
+            - Genre
+            - Tracklist
+            - ... And whatever you think it's interesting about it!
+        -->
+        
+            <section>
+
+                <!-- Card -->
+                <div class="card booking-card">
+
+             <!-- Card image -->
+                <div class="view overlay">
+                <img class="card-img-top" src="preorder.jpg" alt="Card image cap">
+                <a href="#!">
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+                </div>
+            
+                <!-- Card content -->
+                <div class="card-body">
+            
+                <!-- Title -->
+                <h4 class="card-title font-weight-bold"><a>Album Review</a></h4>
+                <!-- Data -->
+                
+                <p class="mb-2">Justin-Bieber Album</p>
+                <!-- Text -->
+                <p class="card-text">Latest Album</p>
+                <hr class="my-4">
+                <p class="lead"><strong>Reviews</strong></p>
+                
+                <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 star">5</label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 star">4</label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 star">3</label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 star">2</label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">1</label>
+                </div>
+                            
+                </div>
+            
+                </div>
+                <h3 class="mt-5">Tracklist <button type="button" onclick="myFunction()" >Hide/Unhide</button> </h3>
+                <div id="myDiv">
+
+                    <div class="row">
+                        <div class="col-1">1</div>
+                        <div class="col-5">Arturo Buzzi:Mal d'amore</div>
+                        <div class="col-2">3:42</div>
+                        <div class="col-4"><button type="button" >$1.29</button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">2</div>
+                        <div class="col-5">Arturo Buzzi:Mal d'amore</div>
+                        <div class="col-2">3:42</div>
+                        <div class="col-4"><button type="button">$1.29</button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">3</div>
+                        <div class="col-5">Arturo Buzzi:Mal d'amore</div>
+                        <div class="col-2">3:42</div>
+                        <div class="col-4"><button type="button">$1.29</button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">4</div>
+                        <div class="col-5">Arturo Buzzi:Mal d'amore</div>
+                        <div class="col-2">3:42</div>
+                        <div class="col-4"><button type="button">$1.29</button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">5</div>
+                        <div class="col-5">Arturo Buzzi:Mal d'amore</div>
+                        <div class="col-2">3:42</div>
+                        <div class="col-4"><button type="button">$1.29</button></div>
+                    </div>
+                </div>
+                    
+            </section>
+            
+            <h2>Carousel</h2>
+            <div class="mb-4">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ul>
+                
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="preorder.jpg" alt="Justin-Bieber" width="1100" height="500">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="feeeling.jpg" alt="Chicago" width="1100" height="500">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="Falloff.jpg" alt="New York" width="1100" height="500">
+                    </div>
+                </div>
+                
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+                </div>
+            </div>
+        </div>
+
+               
+
+    <!-- EXERCISE 6
+            Worst album list! Find out the music you don't really like or you find overrated and list it
+            in this "hall of shame" chart!
+        -->
+
+    <!-- EXERCISE 7
+            Do you have any musician / band you admire or you are fan of?
+            This section is dedicated to him / her / them!
+            Feel free to experiment in this part of the page.
+        -->
+
+    <!-- EXERCISE 8
+            Just covers!
+            Create a tapestry of album pictures. Every album picture must be "square" (use CSS to do that).
+            Put at least 20 covers (also repeated) to have a nice effect and see how Bootstrap handles it.
+        -->
+
+    <!-- EXERCISE 9
+            Implement a footer with some information / social links
+        -->
+        <footer id="footer"> Prepared by:<span id="name">Hammad Ali</span>  </footer>
+
+    <!-- EXERCISE 10
+            Every time the user clicks on a album picture, toggle the album details
+        -->
+
+    <!-- EXERCISE 11
+            Add a button to each section. By clicking on it the section appears (if hidden) or disappears (if visible)
+        -->
+
+    <!--
+            EXERCISE 12
+            Add in the footer a field that counts, on page load, how many ALBUMS are on the page 
+        -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script>
+
+function myFunction() {
+  var x = document.getElementById('myDiv').style.display='block';;
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+      </script>
+  </body>
+  </body>
+</html>
