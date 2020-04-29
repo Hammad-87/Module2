@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+
+        ASSIGNMENT RULES
+        - This is exercise should be done in couples
+        - Implement one exercise each
+        - We suggest you to use Slack or Google Hangouts to speak to each other
+
+        - The solution must be pushed to the repository and be available for the tutors by the end of the day
+        - You can ask for tutor's help
+        - You can google / use StackOverflow BUT we suggest you to use just the material provided
+        - To test the page, just open it with your default browser.
+        - Use Bootstrap4 classes to render the page.
+        - Use correctly containers and rows in order to have a great display
+
+
+        You are implementing a website for a Travel Agency.
+        In the page you can add all the destination you'd like to go in the next future!
+
+
+        Ex 1) Implement a navigation bar, connected to all the sections of the page. 
+        Ex 2) Add a logo into the navigation bar 
+        Ex 3) Add a Jumbotron section in which you present name and claim of the tour operator
+        Ex 4) Implement the "Deal of the Week" section. In this section you'll display 4 destinations.
+         In this section you should have:
+            - 4 destinations per row when the screen is very large
+            - 3 destinations per row when you are on a tablet (or a smaller window)
+            - 2 destinations per row when you are on a small screen
+
+        Ex 5) Implement the "Welcome Summer" section. In this section you'll propose 6 destinations
+            In this section you should have:
+                - 6 destinations per row when the screen is very large
+                - 3 destinations per row when you are on a tablet (or a smaller window)
+                - 2 destinations per row when you are on a small screen
+        
+        Ex 6) Implement a "Deal of the day" section. In this section you'll have:
+            - 66% of the page with a picture of the destination
+            - 33% with Name, dates, price and a short description
+
+        Ex 7) Make the "Deal of the day" section disappear when the user is mobile
+        Ex 8) Add to the Welcome Summer destinations a large shadow
+        Ex 9) Create a section Last Minute, in which you'll display the pictures from the destinations as Cards
+        Ex 10) Create a "Testimonial" section, in which the user can find several feedback from fake customers
+        Ex 11) Create a footer with the company information and a button "contact us"
+
+        Ex 11) Create a button next to each section to collapse and reopen the given section
+        Ex 12) Create a method that counts the number of "travels" on the page
+        Ex 13) Create a modal view with a message and a email field
+        Ex 14) When the user clicks on "contact us" the modal is displayed
+        Ex 15) Create a function that adds a "HOT" badge to all the "Welcome Summer" offers
+        Ex 16) Create a function to delete all "cards" from the page
+      -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <style>
+/* Ex 7) Make the "Deal of the day" section disappear when the user is mobile */
+
+        @media screen and (max-width: 600px) {
+          #display {
+            visibility: hidden;
+            clear: both;
+            float: left;
+            margin: 10px auto 5px 20px;
+            width: 28%;
+            display: none;
+          }
+        }
+
+        
+                  .footer{
+                    border: 1px solid black;
+                    text-align: center;
+                    background-color: rgb(235, 231, 231);
+                  }
+                                
+                  
+            
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+      
+     <!-- Ex 1) Implement a navigation bar, connected to all the sections of the page. -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <!-- Ex 2) Add a logo into the navigation bar  -->
+              <li class="nav-item">
+                <a class="nav-link" href="TravelAgency.html"><img src="img/logo.jpg"> </a>
+              </li>  
+
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">About us</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="#footer">Contact Us</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">New Offers</a>
+                </li>
+          
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+ 
+         <!-- Ex 3) Add a Jumbotron section in which you present name and claim of the tour operator-->
+        <div class="jumbotron">
+          <h1 class="display-4">Travel Agency</h1>
+          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae laboriosam dolor nisi molestias itaque id labore ea architecto optio necessitatibus? Ab beatae omnis exercitationem neque rerum nesciunt vitae corrupti deserunt!</p>
+          
+          <hr class="my-4">
+          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </div>
+      
+      <!-- Ex 4) Implement the "Deal of the Week" section. In this section you'll display 4 destinations.
+       In this section you should have:
+          - 4 destinations per row when the screen is very large
+          - 3 destinations per row when you are on a tablet (or a smaller window)
+          - 2 destinations per row when you are on a small screen
+         -->
+
+         
+
+       <!-- Ex 5) Implement the "Welcome Summer" section. In this section you'll propose 6 destinations
+            In this section you should have:
+                - 6 destinations per row when the screen is very large
+                - 3 destinations per row when you are on a tablet (or a smaller window)
+                - 2 destinations per row when you are on a small screen -->
+
+                <!--  Ex 8) Add to the Welcome Summer destinations a large shadow-->
+              <div class="shadow-lg p-3 mb-5 bg-white rounded"><h1 style="text-align:center"> Welcome Summer </h1></div>
+             
+                 <!-- Ex 11) Create a button next to each section to collapse and reopen the given section-->
+                  <p>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      Open
+                    </a>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                     Collapse
+                    </button>
+                  </p>
+                  <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                
+              
+                <div class="container" id="display">
+                  <div class="row  d-md-3 d-lg-6">
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                      <div class="card mb-4 box-shadow card1">
+  <!-- Ex 6) Implement a "Deal of the day" section. In this section you'll have:
+    - 66% of the page with a picture of the destination
+  - 33% with Name, dates, price and a short description -->
+                        <img class="card-img-top h-66 img1" src="Image7.jpg" alt="Card image cap" >
+                        <div class="card-body h-33">
+                            <p class="card-text">€45 BREAKFAST INCLUDED OR €74 HB IN 1/2 TWIN ROOM*</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Find Out more</button>
+                                    
+                                </div>                                
+                            </div>
+                        </div>
+                     </div>
+                    </div>                 
+        
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                      <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="Image2.jpg" alt="Card image cap" >
+                        <div class="card-body">
+                            <p class="card-text">€45 BREAKFAST INCLUDED OR €74 HB IN 1/2 TWIN ROOM*</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Find Out more</button>
+                                    
+                                </div>                                
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+        
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                      <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="Image3.jpg" alt="Card image cap" >
+                        <div class="card-body">
+                            <p class="card-text">€45 BREAKFAST INCLUDED OR €74 HB IN 1/2 TWIN ROOM*</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Find Out more</button>
+                                    
+                                </div>                                
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+        
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                      <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="Image4.jpg" alt="Card image cap" >
+                        <div class="card-body">
+                            <p class="card-text">€45 BREAKFAST INCLUDED OR €74 HB IN 1/2 TWIN ROOM*</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Find Out more</button>
+                                    
+                                </div>                                
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                      <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="Image5.jpg" alt="Card image cap" >
+                        <div class="card-body">
+                            <p class="card-text">€45 BREAKFAST INCLUDED OR €74 HB IN 1/2 TWIN ROOM*</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Find Out more</button>
+                                    
+                                </div>                                
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                      <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="Image6.jpg" alt="Card image cap" >
+                        <div class="card-body">
+                            <p class="card-text">€45 BREAKFAST INCLUDED OR €74 HB IN 1/2 TWIN ROOM*</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Find Out more</button>
+                                    
+                                </div>                                
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                  
+                  </div>
+                  <hr>
+
+
+                  <section >
+                    <h1>Last Minute</h1>
+                    <div class="mb-4">
+                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      
+                      <!-- Indicators -->
+                      <ul class="carousel-indicators">
+                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                          <li data-target="#myCarousel" data-slide-to="1"></li>
+                          <li data-target="#myCarousel" data-slide-to="2"></li>
+                      </ul>
+                      
+                      <!-- The slideshow -->
+                      <div class="carousel-inner">
+                          <div class="carousel-item active">
+                          <img src="Image1.jpg" alt="Justin-Bieber" width="1100" height="500">
+                          </div>
+                          <div class="carousel-item">
+                          <img src="image2.jpg" alt="Chicago" width="1100" height="500">
+                          </div>
+                          <div class="carousel-item">
+                          <img src="image3.jpg" alt="New York" width="1100" height="500">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="image4.jpg" alt="New York" width="1100" height="500">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="image5.jpg" alt="New York" width="1100" height="500">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="image6.jpg" alt="New York" width="1100" height="500">
+                          </div>
+                      </div>
+                      
+                      <!-- Left and right controls -->
+                      <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                      </a>
+                      <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                          <span class="carousel-control-next-icon"></span>
+                      </a>
+                      </div>
+                  </div>
+                  </section>
+
+<!-- Feedback FOrm Ex 10) Create a "Testimonial" section, in which the user can find several feedback from fake customers -->
+                  <section>
+                    <form class="needs-validation" novalidate>
+                      <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                          <label for="validationCustom01">First name</label>
+                          <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="" required>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label for="validationCustom02">Last name</label>
+                          <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="" required>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label for="validationCustomUsername">Username</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroupPrepend">@</span>
+                            </div>
+                            <input type="number" class="form-control" id="Username" placeholder="VisitorId" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                              Please choose a username.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                          <label for="validationCustom03">City</label>
+                          <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+                          <div class="invalid-feedback">
+                            Please provide a valid city.
+                          </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                          <label for="validationCustom04">State</label>
+                          <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                          <label for="validationCustom05">Zip</label>
+                          <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+                          <div class="invalid-feedback">
+                            Please provide a valid zip.
+                          </div>
+                        </div>
+                        <div class="col-md-3 mb-3"></div>                       
+                          <label for="exampleFormControlTextarea1">Feedback</label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          <div class="invalid-feedback">
+                            Please provide a valid zip.
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                          <label class="form-check-label" for="invalidCheck">
+                            Agree to terms and conditions
+                          </label>
+                          <div class="invalid-feedback">
+                            You must agree before submitting.
+                          </div>
+                        </div>
+                      </div>
+                      <button class="btn btn-primary" id="number" type="submit">Submit form</button>
+                      
+                    </form>
+
+                    <button class="btn btn-outline-secondary"  onclick="travelCounter()">Counting</button>
+                  </section>
+                  <hr>
+                  <div id="result"></div>
+                
+                </div>
+
+
+                
+               
+                
+<!--Ex 9) Create a section Last Minute, in which you'll display the pictures from the destinations as Cards-->
+                <h1 style="text-align: center;">Last Minute</h1>
+<!-- Ex 11) Create a button next to each section to collapse and reopen the given section-->
+                  <p>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      Open
+                    </a>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                     Collapse
+                    </button>
+                  </p>
+                  <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+
+
+  <!-- Ex 11) Create a footer with the company information and a button "contact us" -->
+  <div id="footer">
+                
+  <footer class="footer mt-4">               
+                  
+                  <p>Mobile phone: 003556677889</p>
+                  <p> email: travelagency@gmail.com</p><section>
+                    <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Contact Us
+      </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  </footer>
+</div>
+  
+  </div>
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+
+
+       function travelCounter(){
+    let value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('number').value = value;
+}
+
+
+
+
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                var result = document.getElementById("result");
+                var options = document.getElementById('Username');
+                var calc = "";
+                for (i = 0; i < options.length; i++) {
+                  if (options[i].checked) {
+                    calc = calc + options[i].value;
+                  }
+                }
+                result.innerHTML = calc;
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+      </script>
+  </body>
+</html>
